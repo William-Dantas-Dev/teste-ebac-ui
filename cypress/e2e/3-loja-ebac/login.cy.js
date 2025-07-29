@@ -56,6 +56,10 @@ describe('Function: Login', () => {
         })
     })
 
-    
+    it.only('Do Login With Custom Commands', () => {
+        cy.login("wil@gmail.com", "teste@123")
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, wil (não é wil? Sair)')
+    })
 
 })

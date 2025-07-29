@@ -27,4 +27,10 @@ describe('Function: Register', () => {
         cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
         
     });
+
+    it.only('Do Register with Custom Commands', () => {
+        cy.preRegister(faker.internet.email(), faker.internet.password(), faker.person.firstName(), faker.person.lastName())
+        cy.get('.woocommerce-message').should('exist')
+        cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
+    })
 });
