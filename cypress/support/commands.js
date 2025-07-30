@@ -15,8 +15,8 @@ Cypress.Commands.add('preRegister', (email, password, firstName, lastName) => {
 })
 
 Cypress.Commands.add('accountDetails', (firstName, lastName, displayName) => {
-    cy.get('#account_first_name').type(firstName)
-    cy.get('#account_last_name').type(lastName)
-    cy.get('#account_display_name').type(displayName)
+    cy.get('#account_first_name').clear().type(firstName)
+    cy.get('#account_last_name').clear().type(lastName)
+    cy.get('#account_display_name').clear().type(displayName)
     cy.get('.woocommerce-Button').click()
 })
